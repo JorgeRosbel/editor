@@ -1,18 +1,38 @@
 import { Lang } from "./code.types";
 import { useData } from "../hooks/useData";
 import { compressToEncodedURIComponent} from 'lz-string';
+import Editor from '@monaco-editor/react';
+
 
 export const Code:React.FC<Lang> = ({lang}) => {
 
     const { [lang]: value, setValue } = useData();
-    const changeInput = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
-        setValue(lang,e.target.value);
+ 
+    function handleEditorChange(value: string | undefined) {
+        if (value !== undefined) {
+            setValue(lang, value);
+        }
+        console.log('here is the current model value:', value);
     }
 
+    let lengu = '';
 
+    if(lang === "js"){lengu = "javascript"}
+    else if(lang === "css"){lengu = "css"}
+    else if(lang === "html"){lengu = "html"}
+
+  
     return(
-        <div className="w-full animate-fade">
-            <textarea className="w-full outline-none p-3  caret-red-50 resize-none bg-dark-1 min-h-screen max-h-screen" onChange={changeInput} value={value} id={lang} />
+        <div className="w-full animate-fade min-h-screen p-3">
+            {/* <textarea className="w-full outline-none p-3  caret-red-50 resize-none bg-dark-1 min-h-screen max-h-screen" onChange={changeInput} value={value} id={lang} /> */}
+            <Editor
+            theme="vs-dark"
+            height="100vh"
+            width="100%" // Altura del editor
+            language={lengu} // Lenguaje por defecto
+            value={value} // Valor por defecto
+            onChange={(val) => handleEditorChange(val)}
+    />
         </div>
     )
 }

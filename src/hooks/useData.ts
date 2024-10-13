@@ -10,7 +10,7 @@ const initializeState = (): Omit<State, 'setValue'> => {
   const hashDecoded = pathname !== "" && decompressFromEncodedURIComponent(pathname);
   const Split = hashDecoded && hashDecoded.split("|");
 
-  const initialHtml:string = Split  ? Split[0] : "";
+  const initialHtml:string = Split  ? Split[0] : ``;
   const initialCss:string =  Split  ? Split[1] : "";
   const initialJs:string =  Split  ? Split[2] : "";
 

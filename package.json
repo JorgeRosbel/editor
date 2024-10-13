@@ -1,6 +1,6 @@
 {
   "name": "snippets",
-  "homepage": "https://jorgerosbel.github.io/editor",
+  "homepage": "https://jorgerosbel.github.io/editor/dist/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
     "lz-string": "^1.5.0",
     "pako": "^2.1.0",
     "react": "^18.3.1",

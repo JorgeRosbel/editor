@@ -10,12 +10,11 @@ const App:React.FC = () => {
 
 
   return(
-    <main id="--maing-page" className="w-full max-h-screen overflow-hidden bg-dark-1">
+    <main id="--maing-page" className="w-full max-h-screen overflow-hidden bg-[#1e1e1e]">
       <Editor>
         <CodeContent/>
         <Output  />
       </Editor>
-
     </main>
   )
 
