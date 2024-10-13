@@ -1,12 +1,13 @@
 import { create } from "zustand";
 import { State } from "./useData.types";
-
+import { decompressFromEncodedURIComponent } from 'lz-string';
 
 // Mover la función fuera para que no dependa de `set`
 const initializeState = (): Omit<State, 'setValue'> => {
   const pathname  = location.pathname.split("/")[1];
 
-  const hashDecoded = pathname !== "" && atob(pathname);
+  //const hashDecoded = pathname !== "" && atob(pathname);
+  const hashDecoded = pathname !== "" && decompressFromEncodedURIComponent(pathname);
   const Split = hashDecoded && hashDecoded.split("|");
 
   const initialHtml:string = Split  ? Split[0] : "";

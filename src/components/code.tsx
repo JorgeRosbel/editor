@@ -1,5 +1,6 @@
 import { Lang } from "./code.types";
 import { useData } from "../hooks/useData";
+import { compressToEncodedURIComponent} from 'lz-string';
 
 export const Code:React.FC<Lang> = ({lang}) => {
 
@@ -31,7 +32,8 @@ export const Output:React.FC = () => {
       </body>
     </html>` 
 
-    const hash = btoa(`${html}|${css}|${js}`)
+    //const hash = btoa(`${html}|${css}|${js}`)
+    const hash = compressToEncodedURIComponent(`${html}|${css}|${js}`)
     history.replaceState(null,'',`/${hash}`);
     
     return(
