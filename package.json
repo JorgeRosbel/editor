@@ -1,6 +1,6 @@
 {
   "name": "snippets",
-  "homepage": "https://jorgerosbel.github.io/editor",
+  "homepage": "https://jorgerosbel.github.io/editor/dist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
