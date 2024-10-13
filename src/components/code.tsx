@@ -4,7 +4,9 @@ import { useData } from "../hooks/useData";
 export const Code:React.FC<Lang> = ({lang}) => {
 
     const { [lang]: value, setValue } = useData();
-    const changeInput = (e:React.ChangeEvent<HTMLTextAreaElement>) => setValue(lang,e.target.value)
+    const changeInput = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+        setValue(lang,e.target.value);
+    }
 
 
     return(
@@ -16,9 +18,7 @@ export const Code:React.FC<Lang> = ({lang}) => {
 
 export const Output:React.FC = () => {
     const { html,css,js } = useData();
-
-    const template = `
-    <!doctype html>
+    const template = `<!doctype html>
     <html>
       <head>
         <meta charset="UTF-8" />
@@ -29,7 +29,10 @@ export const Output:React.FC = () => {
       ${html}
         <script>${js}</script>
       </body>
-    </html>`
+    </html>` 
+
+    const hash = btoa(`${html}|${css}|${js}`)
+    history.replaceState(null,'',`/${hash}`);
     
     return(
         <iframe className="bg-white w-1/2" sandbox="allow-scripts" srcDoc={template}></iframe>

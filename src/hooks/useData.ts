@@ -1,23 +1,26 @@
 import { create } from "zustand";
 import { State } from "./useData.types";
 
-export const useData = create<State>(set => ({
-    js:"//Escribe tu javascript ",
-    css:`body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}`,
-    html:`<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style></style>
-  </head>
-  <body>
-    <h1>Hola mundo</h1>
-  </body>
-</html>`,
-    setValue: (mode, content) => set({ [mode]: content })
-}))
+
+// Mover la función fuera para que no dependa de `set`
+const initializeState = (): Omit<State, 'setValue'> => {
+  const pathname  = location.pathname.split("/")[1];
+
+  const hashDecoded = pathname !== "" && atob(pathname);
+  const Split = hashDecoded && hashDecoded.split("|");
+
+  const initialHtml:string = Split  ? Split[0] : "";
+  const initialCss:string =  Split  ? Split[1] : "";
+  const initialJs:string =  Split  ? Split[2] : "";
+
+  return {
+    js: initialJs,
+    css: initialCss,
+    html: initialHtml,
+  };
+};
+
+export const useData = create<State>((set) => ({
+    ...initializeState(),
+    setValue: (mode, content) => set(state => ({ ...state, [mode]: content })),
+}));
