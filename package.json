@@ -1,5 +1,6 @@
 {
   "name": "snippets",
+  "homepage": "https://JorgeRosbel.github.io/editor/dist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
