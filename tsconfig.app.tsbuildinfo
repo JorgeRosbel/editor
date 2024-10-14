@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/code.tsx","./src/components/code.types.ts","./src/components/codecontent.tsx","./src/components/editorcontent.tsx","./src/hooks/usedata.ts","./src/hooks/usedata.types.ts"],"version":"5.6.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/code.tsx","./src/components/code.types.ts","./src/components/codecontent.tsx","./src/components/editorcontent.tsx","./src/components/monaco.tsx","./src/hooks/usedata.ts","./src/hooks/usedata.types.ts"],"version":"5.6.3"}

@@ -57,7 +57,7 @@ export const Output:React.FC = () => {
     history.replaceState(null,'',`/${hash}`);
     
     return(
-        <iframe className="bg-white w-1/2" sandbox="allow-scripts" srcDoc={template}></iframe>
+        <iframe className="bg-white w-1/2" srcDoc={template} sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-presentation"></iframe>
     )
 }
 

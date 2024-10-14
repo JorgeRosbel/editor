@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Editor de Código con React, TypeScript y Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un editor de código muy sencillo creado con Vite, React y TypeScript. Está inspirado en los editores online y en la funcionalidad de compartir el código vía URL, similar a Codi Link de midudev. Aunque es básico, tiene mucho potencial para mejoras.
 
-Currently, two official plugins are available:
+## Instalación del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para instalar este proyecto, sigue los siguientes pasos:
 
-## Expanding the ESLint configuration
+1. Clona el repositorio:
+   ```sh
+   git clone <URL_DEL_REPOSITORIO>
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Navega al directorio del proyecto:
+   ```sh
+   cd <NOMBRE_DEL_DIRECTORIO>
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Instala las dependencias:
+   ```sh
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+5. Abre tu navegador y navega a `http://localhost:5173` para ver el editor en acción.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Características
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Vite**: Utiliza Vite para un desarrollo rápido y eficiente.
+- **React**: Construido con React para una interfaz de usuario dinámica.
+- **TypeScript**: Tipado estático para un código más robusto.
+- **Compartir Código**: Funcionalidad para compartir el código vía URL.
+
+## Mejoras Futuras
+
+Este editor tiene mucho potencial para mejoras, algunas ideas incluyen:
+
+- Soporte para más lenguajes de programación.
+- Integración con servicios de almacenamiento en la nube.
+- Colaboración en tiempo real.
+- Temas personalizables.
+
+¡Esperamos que disfrutes usando este editor y contribuyas con tus propias mejoras!
