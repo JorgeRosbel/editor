@@ -58,7 +58,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       ${e}
         <script>${n}<\/script>
       </body>
-    </html>`,l=Gc.compressToEncodedURIComponent(`${e}|${t}|${n}`);return history.replaceState(null,"",`/${l}`),X.jsx("iframe",{className:"bg-white w-1/2",sandbox:"allow-scripts",srcDoc:r})},tm=({children:e})=>X.jsx("div",{className:"w-full min-h-screen flex",children:e});var of={exports:{}},D={};/**
+    </html>`,l=Gc.compressToEncodedURIComponent(`${e}|${t}|${n}`);return history.replaceState(null,"",`/${l}`),X.jsx("iframe",{className:"bg-white w-1/2",srcDoc:r,sandbox:"allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-presentation"})},tm=({children:e})=>X.jsx("div",{className:"w-full min-h-screen flex",children:e});var of={exports:{}},D={};/**
  * @license React
  * react.production.min.js
  *
